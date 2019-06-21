@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/sitefavicon2.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/sitefavicon2.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/sitefavicon2.png?v=7.1.2">
+
+
+  <link rel="mask-icon" href="/images/sitefavicon2.png?v=7.1.2" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="写在前面本系列文章是本站第一篇干货类型的文章，主要面对当前科学上网形势提供一套适合新手的详细教程。本教程基于VPS搭建v2ray的技术形式，将涵盖服务器选择，安装配置，问题排查等方面。本教程基于个人操作经验，不一定专业准确，请多包涵。缓慢更新。 网上相关教程已经很多了，为什么还要写本文？目前以“科学上网”为关键词的教程多数比较陈旧，以ss/ssr为主，不是很推荐使用。v2ray方面有“白话文教程”">
+<meta name="keywords" content="v2ray,教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="9102年的初心者科学上网指南（一）">
+<meta property="og:url" content="https://sbeam.dev/2019/03/11/post/index.html">
+<meta property="og:site_name" content="Sbeam.dev">
+<meta property="og:description" content="写在前面本系列文章是本站第一篇干货类型的文章，主要面对当前科学上网形势提供一套适合新手的详细教程。本教程基于VPS搭建v2ray的技术形式，将涵盖服务器选择，安装配置，问题排查等方面。本教程基于个人操作经验，不一定专业准确，请多包涵。缓慢更新。 网上相关教程已经很多了，为什么还要写本文？目前以“科学上网”为关键词的教程多数比较陈旧，以ss/ssr为主，不是很推荐使用。v2ray方面有“白话文教程”">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-14T02:21:46.631Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="9102年的初心者科学上网指南（一）">
+<meta name="twitter:description" content="写在前面本系列文章是本站第一篇干货类型的文章，主要面对当前科学上网形势提供一套适合新手的详细教程。本教程基于VPS搭建v2ray的技术形式，将涵盖服务器选择，安装配置，问题排查等方面。本教程基于个人操作经验，不一定专业准确，请多包涵。缓慢更新。 网上相关教程已经很多了，为什么还要写本文？目前以“科学上网”为关键词的教程多数比较陈旧，以ss/ssr为主，不是很推荐使用。v2ray方面有“白话文教程”">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://sbeam.dev/2019/03/11/post/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>9102年的初心者科学上网指南（一） | Sbeam.dev</title>
+  
+
+
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135436039-1"></script>
+  <script>
+    var host = window.location.hostname;
+    if (host !== "localhost" || !true) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-135436039-1');
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Sbeam.dev</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Sbeam大法好</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://sbeam.dev/2019/03/11/post/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hannah">
+      <meta itemprop="description" content="随缘小站">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sbeam.dev">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">9102年的初心者科学上网指南（一）
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-11 12:36:44" itemprop="dateCreated datePublished" datetime="2019-03-11T12:36:44+08:00">2019-03-11</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-14 10:21:46" itemprop="dateModified" datetime="2019-03-14T10:21:46+08:00">2019-03-14</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/网络/" itemprop="url" rel="index"><span itemprop="name">网络</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>本系列文章是本站第一篇干货类型的文章，主要面对当前科学上网形势提供一套适合新手的详细教程。本教程基于VPS搭建v2ray的技术形式，将涵盖服务器选择，安装配置，问题排查等方面。本教程基于个人操作经验，不一定专业准确，请多包涵。缓慢更新。</p>
+<h3 id="网上相关教程已经很多了，为什么还要写本文？"><a href="#网上相关教程已经很多了，为什么还要写本文？" class="headerlink" title="网上相关教程已经很多了，为什么还要写本文？"></a>网上相关教程已经很多了，为什么还要写本文？</h3><p>目前以“科学上网”为关键词的教程多数比较陈旧，以ss/ssr为主，不是很推荐使用。v2ray方面有“白话文教程”，但并没有服务器选择，移动端设置等方面内容。</p>
+<h3 id="本教程适合什么样的人？"><a href="#本教程适合什么样的人？" class="headerlink" title="本教程适合什么样的人？"></a>本教程适合什么样的人？</h3><ul>
+<li>对国外网站服务需求较大，愿意花一定时间精力来保障快速稳定的科学上网。</li>
+<li>认为商业机场过于昂贵且体验不佳，希望能获得更大性价比。</li>
+<li>有一定能力折腾，希望从简单的应用场景开始学习linux系统vps的操作等。<a id="more"></a>
+
+</li>
+</ul>
+<h2 id="服务器的选择"><a href="#服务器的选择" class="headerlink" title="服务器的选择"></a>服务器的选择</h2><h3 id="什么是VPS-为什么选择它？"><a href="#什么是VPS-为什么选择它？" class="headerlink" title="什么是VPS?为什么选择它？"></a>什么是VPS?为什么选择它？</h3><p>目前市场上常见的云服务机器有虚拟主机，VPS，VDS，独立服务器几种。虚拟主机一般用于建站，基本不能用于搭建科学上网服务。VDS，独立服务器过于昂贵，是土豪或者机场的选择。VPS(虚拟专用服务器)是从独立服务器上通过虚拟化技术设置出的虚拟机，具有较为完全的权限和适中的价格。</p>
+<h3 id="如何选择VPS？"><a href="#如何选择VPS？" class="headerlink" title="如何选择VPS？"></a>如何选择VPS？</h3><p>VPS市场复杂，在里面找到性价比高的是一门学问。以下简单叙述。</p>
+<h4 id="商家简介-无推广无aff"><a href="#商家简介-无推广无aff" class="headerlink" title="商家简介(无推广无aff)"></a>商家简介(无推广无aff)</h4><h5 id="企业级云服务提供商"><a href="#企业级云服务提供商" class="headerlink" title="企业级云服务提供商"></a>企业级云服务提供商</h5><p>我们需要的主要是国外VPS，在这一方面有谷歌gcp，微软azure，亚马逊aws三家较为主流。费用相较其他商家高，但可以白嫖试用。本人三种都使用过，以下介绍。</p>
+<ul>
+<li><a href="https://cloud.google.com" target="_blank" rel="noopener">谷歌GCP</a>:<strong>最为推荐!</strong>提供visa/mastercard即可获得12个月300$试用，足够一般用户使用一年。推荐选择asia-east-1/2香港/台湾的机器，国内延迟基本在80ms左右，是目前个人使用过网络最好的。配置选择共享cpu的微型0.6g内存或者小型1.7g内存，内存大的型号使用中速度会明显更快。试用金额用完后计费，机器基本费用还好，主要是发往国内的流量较贵。</li>
+<li><a href="https://azure.microsoft.com/en-us/" target="_blank" rel="noopener">微软Azure</a>: 可以获得200$试用，但是有效期只有一个月。网络不错，最好的香港机器一般难以获得，可以选择日本或新加坡的机器，国内100ms延迟左右。配置最小的够用。</li>
+<li><a href="https://aws.amazon.com/cn/" target="_blank" rel="noopener">亚马逊Aws</a>：可以试用固定配置的机器一年。网络一般。</li>
+</ul>
+<p>这些机器一般购买后需要一些配置才能正常使用，会在下一篇中介绍。</p>
+<h5 id="“知名”服务商"><a href="#“知名”服务商" class="headerlink" title="“知名”服务商"></a>“知名”服务商</h5><p>这里指<a href="https://www.digitalocean.com/" target="_blank" rel="noopener">Digitalocean</a>，<a href="http://vultr.com/" target="_blank" rel="noopener">Vultr</a>等，一般也提供试用，费用也不高，但是网络情况实在不佳，不建议作为日常使用。</p>
+<h5 id="一般商家"><a href="#一般商家" class="headerlink" title="一般商家"></a>一般商家</h5><p>主要的VPS购买渠道，商家中鱼龙混杂，建议查阅相关评测后购买。个人购买过的<a href="https://idc.wiki/index.php" target="_blank" rel="noopener">idc.wiki</a>，<a href="https://shop.liyuans.com/" target="_blank" rel="noopener">梨园</a>都是不错的商家<br>评测网站：</p>
+<ul>
+<li><a href="https://zhujiwiki.com/" target="_blank" rel="noopener">主机百科</a></li>
+<li><a href="https://liyuans.com/" target="_blank" rel="noopener">梨园</a></li>
+<li><a href="https://www.mrkevin.net/" target="_blank" rel="noopener">Kevin</a></li>
+</ul>
+<h4 id="术语简介"><a href="#术语简介" class="headerlink" title="术语简介"></a>术语简介</h4><h5 id="虚拟化技术"><a href="#虚拟化技术" class="headerlink" title="虚拟化技术"></a>虚拟化技术</h5><p>VPS上不同的虚拟化技术会对部分权限产生影响。主流的虚拟化技术有KVM,OpenVZ(OVZ),LXC等。具体来说，选择OpenVZ配置bbr加速时需要特殊脚本。</p>
+<h5 id="网络线路"><a href="#网络线路" class="headerlink" title="网络线路"></a>网络线路</h5><p>科学上网用途选择VPS的主要标准是网络状况。因此国际传输所用的线路十分重要，决定了数据以怎样的路径传输。但是由于每个人运营商不同，网络状况复杂，也不能通过线路来完全断定网络状况。<strong>建议大家测试后再决定。</strong>下简要介绍常见线路。</p>
+<ul>
+<li>美国:CN2 GIA&gt;CN2 GT&gt;普通线路 CN2是电信建设的“下一代”骨干网，价格一般较高。另有对国内某些运营商特别优化的线路，网络状况也很好。</li>
+<li>日本:有bbtec(softbank/软银)，iij，ntt等。bbtec是公认最好的线路，但个人运营商由于神秘原因这条线路会绕美。iij高峰比较拥堵。</li>
+<li>香港:HKT，HKBT，CN2等。</li>
+</ul>
+<h5 id="硬件配置"><a href="#硬件配置" class="headerlink" title="硬件配置"></a>硬件配置</h5><p>CPU，内存，硬盘之类很容易理解。个人使用不需要高配置。带宽一般是共享的。</p>
+<h5 id="NAT"><a href="#NAT" class="headerlink" title="NAT?"></a>NAT?</h5><p>NAT与普通VPS的区别在于没有独立IP地址，通过映射特定端口实现访问。这类VPS会比较便宜，在个人科学上网用途中与普通VPS区别不大。</p>
+<h5 id="原生IP-可看NF"><a href="#原生IP-可看NF" class="headerlink" title="原生IP?可看NF?"></a>原生IP?可看NF?</h5><p>原生IP是指实际ip信息与机房归属地相同。这样的ip对当地游戏，流媒体服务等支持较好，但也有例外。如果有解锁nf的需求，建议事先了解好。</p>
+<h4 id="测试方法"><a href="#测试方法" class="headerlink" title="测试方法"></a>测试方法</h4><p>购买Vps前必需的步骤是进行测试。一般的Vps商家和评测网站都会提供测试ip，即Looking glass。利用它可以进行ping测试延迟，trace测试线路。</p>
+<ul>
+<li><a href="https://www.ipip.net/" target="_blank" rel="noopener">ipip.net</a>:测试ip归属地，也可以对trace得到的路径节点进行查询来确认线路。</li>
+<li><a href="https://www.ipip.net/product/client.html" target="_blank" rel="noopener">Best trace</a>:可以直观看到传输路径。</li>
+<li>Ping:打开cmd，输进去即可。</li>
+<li><a href="https://api.i-meto.com/speedtest.page" target="_blank" rel="noopener">云服务测速</a>:可以方便地测试各大云服务的延迟，但似乎有一些误差。</li>
+<li><a href="https://ipcheck.need.sh/" target="_blank" rel="noopener">Ipcheck</a>:检测ip是否被墙。</li>
+</ul>
+<p>本教程的第一部分到此结束。看到这里，你应该已经选择并购买了适合自己的VPS。下一篇将介绍如何配置你的VPS。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/v2ray/" rel="tag"># v2ray</a>
+          
+            <a href="/tags/教程/" rel="tag"># 教程</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/04/firstpost/" rel="next" title="热烈庆祝Sbeam.dev开始运行！">
+                <i class="fa fa-chevron-left"></i> 热烈庆祝Sbeam.dev开始运行！
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/11/post-1/" rel="prev" title="9102年的初心者科学上网指南（二）">
+                9102年的初心者科学上网指南（二） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MzEyMS8xOTY2Nw=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Hannah</p>
+              <div class="site-description motion-element" itemprop="description">随缘小站</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://lastmc.github.io" title="http://lastmc.github.io" rel="noopener" target="_blank">Lastmc</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#网上相关教程已经很多了，为什么还要写本文？"><span class="nav-number">1.1.</span> <span class="nav-text">网上相关教程已经很多了，为什么还要写本文？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本教程适合什么样的人？"><span class="nav-number">1.2.</span> <span class="nav-text">本教程适合什么样的人？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器的选择"><span class="nav-number">2.</span> <span class="nav-text">服务器的选择</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是VPS-为什么选择它？"><span class="nav-number">2.1.</span> <span class="nav-text">什么是VPS?为什么选择它？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何选择VPS？"><span class="nav-number">2.2.</span> <span class="nav-text">如何选择VPS？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#商家简介-无推广无aff"><span class="nav-number">2.2.1.</span> <span class="nav-text">商家简介(无推广无aff)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#企业级云服务提供商"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">企业级云服务提供商</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#“知名”服务商"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">“知名”服务商</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#一般商家"><span class="nav-number">2.2.1.3.</span> <span class="nav-text">一般商家</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#术语简介"><span class="nav-number">2.2.2.</span> <span class="nav-text">术语简介</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#虚拟化技术"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">虚拟化技术</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#网络线路"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">网络线路</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#硬件配置"><span class="nav-number">2.2.2.3.</span> <span class="nav-text">硬件配置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#NAT"><span class="nav-number">2.2.2.4.</span> <span class="nav-text">NAT?</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#原生IP-可看NF"><span class="nav-number">2.2.2.5.</span> <span class="nav-text">原生IP?可看NF?</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试方法"><span class="nav-number">2.2.3.</span> <span class="nav-text">测试方法</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hannah</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.2</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.2"></script>
+
+  <script src="/js/motion.js?v=7.1.2"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.2"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.2"></script>
+<script src="/js/post-details.js?v=7.1.2"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.2"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    <script>
+  window.livereOptions = {
+    refer: '2019/03/11/post/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>
