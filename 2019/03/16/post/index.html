@@ -1,150 +1,62 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.9.0">
+<html lang="zh-CN">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/sitefavicon2.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/sitefavicon2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/sitefavicon2.png">
+  <link rel="mask-icon" href="/images/sitefavicon2.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"sbeam.dev","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
-
-
-  <meta http-equiv="Cache-Control" content="no-transform">
-  <meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
-
-<link rel="stylesheet" href="/css/main.css?v=7.1.2">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/sitefavicon2.png?v=7.1.2">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/sitefavicon2.png?v=7.1.2">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/sitefavicon2.png?v=7.1.2">
-
-
-  <link rel="mask-icon" href="/images/sitefavicon2.png?v=7.1.2" color="#222">
-
-
-
-
-
-
-
-<script id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '7.1.2',
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
-    back2top: true,
-    back2top_sidebar: false,
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
-
-  <meta name="description" content="服务端配置下载安装使用bash &amp;lt;(curl -L -s https://install.direct/go.sh)安装。随后使用cd /etc/v2ray/切换到配置文件文件夹。使用nano config.json进行编辑。 配置文件配置文件的各项设置十分丰富，在官方网站，白话文教程中有详细介绍，在此不作重复。">
-<meta name="keywords" content="v2ray,教程">
+  <meta name="description" content="服务端配置下载安装使用bash &lt;(curl -L -s https:&#x2F;&#x2F;install.direct&#x2F;go.sh)安装。随后使用cd &#x2F;etc&#x2F;v2ray&#x2F;切换到配置文件文件夹。使用nano config.json进行编辑。 配置文件配置文件的各项设置十分丰富，在官方网站，白话文教程中有详细介绍，在此不作重复。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="9102年的初心者科学上网指南（三）">
 <meta property="og:url" content="https://sbeam.dev/2019/03/16/post/index.html">
 <meta property="og:site_name" content="Sbeam.dev">
-<meta property="og:description" content="服务端配置下载安装使用bash &amp;lt;(curl -L -s https://install.direct/go.sh)安装。随后使用cd /etc/v2ray/切换到配置文件文件夹。使用nano config.json进行编辑。 配置文件配置文件的各项设置十分丰富，在官方网站，白话文教程中有详细介绍，在此不作重复。">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-16T12:09:44.232Z">
+<meta property="og:description" content="服务端配置下载安装使用bash &lt;(curl -L -s https:&#x2F;&#x2F;install.direct&#x2F;go.sh)安装。随后使用cd &#x2F;etc&#x2F;v2ray&#x2F;切换到配置文件文件夹。使用nano config.json进行编辑。 配置文件配置文件的各项设置十分丰富，在官方网站，白话文教程中有详细介绍，在此不作重复。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-03-16T12:07:57.000Z">
+<meta property="article:modified_time" content="2019-03-16T12:09:44.232Z">
+<meta property="article:author" content="Hannah">
+<meta property="article:tag" content="v2ray">
+<meta property="article:tag" content="教程">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="9102年的初心者科学上网指南（三）">
-<meta name="twitter:description" content="服务端配置下载安装使用bash &amp;lt;(curl -L -s https://install.direct/go.sh)安装。随后使用cd /etc/v2ray/切换到配置文件文件夹。使用nano config.json进行编辑。 配置文件配置文件的各项设置十分丰富，在官方网站，白话文教程中有详细介绍，在此不作重复。">
+
+<link rel="canonical" href="https://sbeam.dev/2019/03/16/post/">
 
 
-
-
-
-  
-  
-  <link rel="canonical" href="https://sbeam.dev/2019/03/16/post/">
-
-
-
-<script id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : false,
+    isPost : true
   };
 </script>
 
   <title>9102年的初心者科学上网指南（三） | Sbeam.dev</title>
   
-
-
-
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135436039-1"></script>
-  <script>
-    var host = window.location.hostname;
-    if (host !== "localhost" || !true) {
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-135436039-1');
-    }
-  </script>
-
-
-
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135436039-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-135436039-1');
+      }
+    </script>
 
 
 
@@ -153,7 +65,6 @@
 
   <noscript>
   <style>
-  .use-motion .motion-element,
   .use-motion .brand,
   .use-motion .menu-item,
   .sidebar-inner,
@@ -162,9 +73,8 @@
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
+  .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -178,265 +88,132 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
-    
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
 
-    <div class="custom-logo-site-title">
+  <div class="site-meta">
+
+    <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Sbeam.dev</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-    
-      
         <p class="site-subtitle">技术相关分享，以及杂谈</p>
-      
-    
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
-
 
 
 <nav class="site-nav">
   
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
+        <li class="menu-item menu-item-tags">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-categories">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
+        <li class="menu-item menu-item-archives">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
   </li>
+  </ul>
 
-      
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
 </nav>
-
-
-
-  
-
-
-
 </div>
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
-          <div id="content" class="content">
+
+          <div class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
-
-  
-
+  <div class="posts-expand">
+      
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://sbeam.dev/2019/03/16/post/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Hannah">
       <meta itemprop="description" content="随缘小站">
-      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Sbeam.dev">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">9102年的初心者科学上网指南（三）
-
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          9102年的初心者科学上网指南（三）
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
+              <span class="post-meta-item-text">发表于</span>
               
 
               <time title="创建时间：2019-03-16 20:07:57 / 修改时间：20:09:44" itemprop="dateCreated datePublished" datetime="2019-03-16T20:07:57+08:00">2019-03-16</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
+            </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-
-                
-                
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+                </span>
                   ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/网络/" itemprop="url" rel="index"><span itemprop="name">网络</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF/%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">网络</span></a>
+                </span>
             </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -444,15 +221,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
         <h2 id="服务端配置"><a href="#服务端配置" class="headerlink" title="服务端配置"></a>服务端配置</h2><h3 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h3><p>使用<code>bash &lt;(curl -L -s https://install.direct/go.sh)</code>安装。<br>随后使用<code>cd /etc/v2ray/</code>切换到配置文件文件夹。<br>使用<code>nano config.json</code>进行编辑。</p>
 <h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>配置文件的各项设置十分丰富，在<a href="https://v2ray.com/chapter_02/" target="_blank" rel="noopener">官方网站</a>，<a href="https://toutyrater.github.io/basic/vmess.html" target="_blank" rel="noopener">白话文教程</a>中有详细介绍，在此不作重复。</p>
 <a id="more"></a>
 <p>在此分享个人使用的配置文件基本格式。采用无混淆的一般传输方式，配置较为简便且不易出错。下面是一个示例的双端口6用户配置文件。</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"log"</span>: &#123;</span><br><span class="line">    <span class="attr">"loglevel"</span>: <span class="string">"warning"</span>,</span><br><span class="line">    <span class="attr">"access"</span>: <span class="string">"/var/log/v2ray/access.log"</span>,</span><br><span class="line">    <span class="attr">"error"</span>: <span class="string">"/var/log/v2ray/error.log"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"inbounds"</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"port"</span>: 端口<span class="number">1</span>,</span><br><span class="line">      <span class="attr">"protocol"</span>: <span class="string">"vmess"</span>,</span><br><span class="line">      <span class="attr">"settings"</span>: &#123;</span><br><span class="line">        <span class="attr">"clients"</span>: [</span><br><span class="line">          &#123;</span><br><span class="line">            <span class="attr">"id"</span>: <span class="string">"uuid1"</span>,</span><br><span class="line">            <span class="attr">"alterId"</span>:<span class="number">64</span></span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            <span class="attr">"id"</span>: <span class="string">"uuid2"</span>,</span><br><span class="line">            <span class="attr">"alterId"</span>:<span class="number">64</span></span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            <span class="attr">"id"</span>: <span class="string">"uuid3"</span>,</span><br><span class="line">            <span class="attr">"alterId"</span>:<span class="number">64</span></span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"port"</span>: 端口<span class="number">2</span>,</span><br><span class="line">      <span class="attr">"protocol"</span>: <span class="string">"vmess"</span>,</span><br><span class="line">      <span class="attr">"settings"</span>: &#123;</span><br><span class="line">        <span class="attr">"clients"</span>: [</span><br><span class="line">          &#123;</span><br><span class="line">            <span class="attr">"id"</span>: <span class="string">"uuid4"</span>,</span><br><span class="line">            <span class="attr">"alterId"</span>:<span class="number">64</span></span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            <span class="attr">"id"</span>: <span class="string">"uuid5"</span>,</span><br><span class="line">            <span class="attr">"alterId"</span>:<span class="number">64</span></span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            <span class="attr">"id"</span>: <span class="string">"uuid6"</span>,</span><br><span class="line">            <span class="attr">"alterId"</span>:<span class="number">64</span></span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"outbounds"</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"protocol"</span>: <span class="string">"freedom"</span>,</span><br><span class="line">      <span class="attr">"settings"</span>: &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>有几点注意事项。</p>
 <ul>
 <li>端口记得填写安装bbr时选择使用bbr加速的端口(如安装bbr时进行过选择端口步骤)。</li>
@@ -464,8 +237,7 @@
 <h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><p>编写完配置保存后，使用<code>systemctl restart v2ray</code>重启服务。<br>使用<code>systemctl status v2ray.service</code>查看服务状态。如果结果为绿色active(running)则为正常，否则会提示错误信息。到这一步，服务端配置完成，可以断开SSH连接了。</p>
 <h2 id="客户端配置-PC"><a href="#客户端配置-PC" class="headerlink" title="客户端配置(PC)"></a>客户端配置(PC)</h2><h3 id="客户端安装"><a href="#客户端安装" class="headerlink" title="客户端安装"></a>客户端安装</h3><p>我们选择<a href="https://github.com/Fndroid/clash_for_windows_pkg" target="_blank" rel="noopener">Clash for windows</a>。因为这一客户端配置简便，功能丰富，(最重要的)界面好看。页面中也提供了macOS版本的链接。<br>访问<a href="https://github.com/Fndroid/clash_for_windows_pkg/releases" target="_blank" rel="noopener">Releases</a>页面下载最新exe安装包。安装后在任务栏找到其图标，右键选择Dashboard进入界面。<br>在<a href="https://docs.cfw.lbyczf.com/" target="_blank" rel="noopener">此页面</a>可以了解详细使用方法。</p>
 <h3 id="配置文件-1"><a href="#配置文件-1" class="headerlink" title="配置文件"></a>配置文件</h3><p>该客户端配置文件采用Yml编写。在<a href="https://github.com/Dreamacro/clash/blob/master/README.md" target="_blank" rel="noopener">此页面</a>有较为详细的编写示例。同样，分享个人使用的配置文件示例。</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">port:</span> <span class="number">7890</span></span><br><span class="line"><span class="attr">socks-port:</span> <span class="number">7891</span></span><br><span class="line"><span class="attr">redir-port:</span> <span class="number">7892</span></span><br><span class="line"><span class="attr">allow-lan:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">mode:</span> <span class="string">Rule</span></span><br><span class="line"><span class="attr">log-level:</span> <span class="string">info</span></span><br><span class="line"><span class="attr">external-controller:</span> <span class="string">'127.0.0.1:9090'</span></span><br><span class="line"><span class="attr">secret:</span> <span class="string">''</span></span><br><span class="line"><span class="attr">Proxy:</span></span><br><span class="line"><span class="bullet">  -</span> <span class="string">&#123;</span> <span class="attr">name:</span> <span class="string">"name1"</span><span class="string">,</span> <span class="attr">type:</span> <span class="string">vmess,</span> <span class="attr">server:</span> <span class="string">ip地址,</span> <span class="attr">port:</span> <span class="string">端口,</span> <span class="attr">uuid:</span> <span class="string">你的uuid,</span> <span class="attr">alterId:</span> <span class="number">64</span><span class="string">,</span> <span class="attr">cipher:</span> <span class="string">auto</span> <span class="string">&#125;</span></span><br><span class="line"><span class="string">Proxy</span> <span class="attr">Group:</span></span><br><span class="line"><span class="attr">  - name:</span> <span class="string">Proxy</span></span><br><span class="line"><span class="attr">    type:</span> <span class="string">select</span></span><br><span class="line"><span class="attr">    proxies:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">name1</span></span><br><span class="line"><span class="attr">Rule:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">DOMAIN-SUFFIX,google.com,Proxy</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">DOMAIN-KEYWORD,google,Proxy</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">DOMAIN-KEYWORD,onedrive,Proxy</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">DOMAIN-KEYWORD,sharepoint,Proxy</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">DOMAIN-KEYWORD,office,Proxy</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">DOMAIN,google.com,Proxy</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">DOMAIN-SUFFIX,ad.com,REJECT</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">IP-CIDR,127.0.0.0/8,DIRECT</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">GEOIP,CN,DIRECT</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">FINAL,,Proxy</span></span><br></pre></td></tr></table></figure>
-
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">port:</span> <span class="number">7890</span></span><br><span class="line"><span class="attr">socks-port:</span> <span class="number">7891</span></span><br><span class="line"><span class="attr">redir-port:</span> <span class="number">7892</span></span><br><span class="line"><span class="attr">allow-lan:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">mode:</span> <span class="string">Rule</span></span><br><span class="line"><span class="attr">log-level:</span> <span class="string">info</span></span><br><span class="line"><span class="attr">external-controller:</span> <span class="string">'127.0.0.1:9090'</span></span><br><span class="line"><span class="attr">secret:</span> <span class="string">''</span></span><br><span class="line"><span class="attr">Proxy:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">&#123;</span> <span class="attr">name:</span> <span class="string">"name1"</span><span class="string">,</span> <span class="attr">type:</span> <span class="string">vmess,</span> <span class="attr">server:</span> <span class="string">ip地址,</span> <span class="attr">port:</span> <span class="string">端口,</span> <span class="attr">uuid:</span> <span class="string">你的uuid,</span> <span class="attr">alterId:</span> <span class="number">64</span><span class="string">,</span> <span class="attr">cipher:</span> <span class="string">auto</span> <span class="string">&#125;</span></span><br><span class="line"><span class="attr">Proxy Group:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Proxy</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">select</span></span><br><span class="line">    <span class="attr">proxies:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">name1</span></span><br><span class="line"><span class="attr">Rule:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">DOMAIN-SUFFIX,google.com,Proxy</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">DOMAIN-KEYWORD,google,Proxy</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">DOMAIN-KEYWORD,onedrive,Proxy</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">DOMAIN-KEYWORD,sharepoint,Proxy</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">DOMAIN-KEYWORD,office,Proxy</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">DOMAIN,google.com,Proxy</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">DOMAIN-SUFFIX,ad.com,REJECT</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">IP-CIDR,127.0.0.0/8,DIRECT</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">GEOIP,CN,DIRECT</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">FINAL,,Proxy</span></span><br></pre></td></tr></table></figure>
 <p>多条线路直接在Proxy下按示例添加多行，再将名字填在Proxy Group下的proxies即可。最后的Rule规则部分设置了对google和onedrive通过代理，国内网站直连的分流策略。<br>同样，也有一些注意事项。</p>
 <ul>
 <li>NAT类型需要填写映射到的外网端口。</li>
@@ -484,295 +256,169 @@
 <h3 id="关于DNS的一点说明"><a href="#关于DNS的一点说明" class="headerlink" title="关于DNS的一点说明"></a>关于DNS的一点说明</h3><p>使用中发现，对于某些VPS，如上的设置不能成功，chrome错误代码提示DNS相关。可以尝试打开“使用内置DNS”并尝试不同的DNS设置。本人才疏学浅，不能弄清背后的原因。欢迎在评论区分享。</p>
 <p>到这里，你已经完全掌握了自建v2ray科学上网的全部流程，迈出了走向自由互联网的重要一步。恭喜！<br>当然，v2ray和VPS的应用不仅于此。本系列下一篇将讲述v2ray其它的应用，例如tg代理等等。</p>
 
-      
     </div>
 
     
-
-    
-    
-    
-
-    
-
-    
-      
     
     
 
-    
-
-    <footer class="post-footer">
-      
-        
-          
-        
-        <div class="post-tags">
-          
-            <a href="/tags/v2ray/" rel="tag"># v2ray</a>
-          
-            <a href="/tags/教程/" rel="tag"># 教程</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/03/11/post-1/" rel="next" title="9102年的初心者科学上网指南（二）">
-                <i class="fa fa-chevron-left"></i> 9102年的初心者科学上网指南（二）
-              </a>
-            
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/v2ray/" rel="tag"># v2ray</a>
+              <a href="/tags/%E6%95%99%E7%A8%8B/" rel="tag"># 教程</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/16/bokaro1/" rel="prev" title="【匹分析】”僕らはみんな意味不明”在表达什么？">
-                【匹分析】”僕らはみんな意味不明”在表达什么？ <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
 
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/03/11/post-1/" rel="prev" title="9102年的初心者科学上网指南（二）">
+      <i class="fa fa-chevron-left"></i> 9102年的初心者科学上网指南（二）
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/03/16/bokaro1/" rel="next" title="【匹分析】”僕らはみんな意味不明”在表达什么？">
+      【匹分析】”僕らはみんな意味不明”在表达什么？ <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
-
+  
+  
+  
 
   </div>
 
 
           </div>
           
-
-  
-    <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC80MzEyMS8xOTY2Nw=="></div>
-    </div>
-
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80MzEyMS8xOTY2Nw=="></div>
+  </div>
   
 
-
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
-        
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
-  <aside id="sidebar" class="sidebar">
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#服务端配置"><span class="nav-number">1.</span> <span class="nav-text">服务端配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载安装"><span class="nav-number">1.1.</span> <span class="nav-text">下载安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置文件"><span class="nav-number">1.2.</span> <span class="nav-text">配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动"><span class="nav-number">1.3.</span> <span class="nav-text">启动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#客户端配置-PC"><span class="nav-number">2.</span> <span class="nav-text">客户端配置(PC)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#客户端安装"><span class="nav-number">2.1.</span> <span class="nav-text">客户端安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置文件-1"><span class="nav-number">2.2.</span> <span class="nav-text">配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动-1"><span class="nav-number">2.3.</span> <span class="nav-text">启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测速"><span class="nav-number">2.4.</span> <span class="nav-text">测速</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#移动端配置-安卓"><span class="nav-number">3.</span> <span class="nav-text">移动端配置(安卓)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#客户端安装-1"><span class="nav-number">3.1.</span> <span class="nav-text">客户端安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">3.2.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于DNS的一点说明"><span class="nav-number">3.3.</span> <span class="nav-text">关于DNS的一点说明</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">Hannah</p>
-              <div class="site-description motion-element" itemprop="description">随缘小站</div>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">10</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  
-                    
-                      <a href="/categories/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">8</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                      <a href="/tags/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">8</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-
-          
-
-          
-
-          
-          
-            <div class="links-of-blogroll motion-element links-of-blogroll-block">
-              <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-link"></i>
-                友情链接
-              </div>
-              <ul class="links-of-blogroll-list">
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://lastmc.github.io" title="http://lastmc.github.io" rel="noopener" target="_blank">Lastmc</a>
-                  </li>
-                
-              </ul>
-            </div>
-          
-
-          
-            
-          
-          
-
-        </div>
-      </div>
-
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#服务端配置"><span class="nav-number">1.</span> <span class="nav-text">服务端配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载安装"><span class="nav-number">1.1.</span> <span class="nav-text">下载安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置文件"><span class="nav-number">1.2.</span> <span class="nav-text">配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动"><span class="nav-number">1.3.</span> <span class="nav-text">启动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#客户端配置-PC"><span class="nav-number">2.</span> <span class="nav-text">客户端配置(PC)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#客户端安装"><span class="nav-number">2.1.</span> <span class="nav-text">客户端安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置文件-1"><span class="nav-number">2.2.</span> <span class="nav-text">配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动-1"><span class="nav-number">2.3.</span> <span class="nav-text">启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测速"><span class="nav-number">2.4.</span> <span class="nav-text">测速</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#移动端配置-安卓"><span class="nav-number">3.</span> <span class="nav-text">移动端配置(安卓)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#客户端安装-1"><span class="nav-number">3.1.</span> <span class="nav-text">客户端安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">3.2.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于DNS的一点说明"><span class="nav-number">3.3.</span> <span class="nav-text">关于DNS的一点说明</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-  
-
-
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Hannah</p>
+  <div class="site-description" itemprop="description">随缘小站</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
         
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
       </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Hannah</span>
-
-  
-
-  
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
 </div>
 
 
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://lastmc.github.io/" title="http:&#x2F;&#x2F;lastmc.github.io" rel="noopener" target="_blank">Lastmc</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
 
 
+      </div>
+    </main>
 
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hannah</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
+  </div>
   <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.2</div>
-
-
-
+  <div class="theme-info">主题 – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.7.2
+  </div>
 
         
 
@@ -783,109 +429,54 @@
 
 
 
-        
       </div>
     </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-    
-
-    
   </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
 
   
 
 <script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script src="/lib/jquery/index.js?v=3.4.1"></script>
-
-  
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-
-  
-
-
-  <script src="/js/utils.js?v=7.1.2"></script>
-
-  <script src="/js/motion.js?v=7.1.2"></script>
-
-
-
-  
-  
-
-
-  <script src="/js/schemes/muse.js?v=7.1.2"></script>
-
-
-
-  
-  <script src="/js/scrollspy.js?v=7.1.2"></script>
-<script src="/js/post-details.js?v=7.1.2"></script>
-
-
-
-  
-
-
-  <script src="/js/next-boot.js?v=7.1.2"></script>
-
-
-  
-
-  
-
-  
-
-  
-
-
-  
-    <script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
   window.livereOptions = {
-    refer: '2019/03/16/post/'
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
@@ -895,60 +486,8 @@
     j.async = true;
     e.parentNode.insertBefore(j, e);
   })(document, 'script');
+});
 </script>
-
-  
-
-
-  
-
-
-
-
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
-
-
-  
-
-  
-
-  
-  <script>
-    (function(){
-      var bp = document.createElement('script');
-      var curProtocol = window.location.protocol.split(':')[0];
-      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(bp, s);
-    })();
-  </script>
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":220,"height":440},"mobile":{"show":true},"log":false});</script></body>
 </html>

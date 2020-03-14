@@ -1,150 +1,62 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.9.0">
+<html lang="zh-CN">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/sitefavicon2.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/sitefavicon2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/sitefavicon2.png">
+  <link rel="mask-icon" href="/images/sitefavicon2.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"sbeam.dev","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
-
-
-  <meta http-equiv="Cache-Control" content="no-transform">
-  <meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
-
-<link rel="stylesheet" href="/css/main.css?v=7.1.2">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/sitefavicon2.png?v=7.1.2">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/sitefavicon2.png?v=7.1.2">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/sitefavicon2.png?v=7.1.2">
-
-
-  <link rel="mask-icon" href="/images/sitefavicon2.png?v=7.1.2" color="#222">
-
-
-
-
-
-
-
-<script id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '7.1.2',
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
-    back2top: true,
-    back2top_sidebar: false,
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
-
-  <meta name="description" content="VPS订购后步骤选择系统订购VPS时一般会让你选择系统。这里推荐ubuntu，因为centos的部分命令不同有些不不习惯。版本个人选择较新的版本(一般为18.04)。 配置防火墙(GCP，Azure等适用)购买VPS后这些商家可能需要手动更改防火墙规则以允许流量传输。  GCP:创建VM实例时勾选允许HTTP/HTTPS流量。然后，在左侧菜单中选择VPC网络，设置防火墙规则。添加规则，内容为0.0">
-<meta name="keywords" content="v2ray,教程">
+  <meta name="description" content="VPS订购后步骤选择系统订购VPS时一般会让你选择系统。这里推荐ubuntu，因为centos的部分命令不同有些不不习惯。版本个人选择较新的版本(一般为18.04)。 配置防火墙(GCP，Azure等适用)购买VPS后这些商家可能需要手动更改防火墙规则以允许流量传输。  GCP:创建VM实例时勾选允许HTTP&#x2F;HTTPS流量。然后，在左侧菜单中选择VPC网络，设置防火墙规则。添加规则，内容为0.0">
 <meta property="og:type" content="article">
 <meta property="og:title" content="9102年的初心者科学上网指南（二）">
 <meta property="og:url" content="https://sbeam.dev/2019/03/11/post-1/index.html">
 <meta property="og:site_name" content="Sbeam.dev">
-<meta property="og:description" content="VPS订购后步骤选择系统订购VPS时一般会让你选择系统。这里推荐ubuntu，因为centos的部分命令不同有些不不习惯。版本个人选择较新的版本(一般为18.04)。 配置防火墙(GCP，Azure等适用)购买VPS后这些商家可能需要手动更改防火墙规则以允许流量传输。  GCP:创建VM实例时勾选允许HTTP/HTTPS流量。然后，在左侧菜单中选择VPC网络，设置防火墙规则。添加规则，内容为0.0">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-14T02:24:12.146Z">
+<meta property="og:description" content="VPS订购后步骤选择系统订购VPS时一般会让你选择系统。这里推荐ubuntu，因为centos的部分命令不同有些不不习惯。版本个人选择较新的版本(一般为18.04)。 配置防火墙(GCP，Azure等适用)购买VPS后这些商家可能需要手动更改防火墙规则以允许流量传输。  GCP:创建VM实例时勾选允许HTTP&#x2F;HTTPS流量。然后，在左侧菜单中选择VPC网络，设置防火墙规则。添加规则，内容为0.0">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-03-11T12:53:12.000Z">
+<meta property="article:modified_time" content="2019-03-14T02:24:12.146Z">
+<meta property="article:author" content="Hannah">
+<meta property="article:tag" content="v2ray">
+<meta property="article:tag" content="教程">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="9102年的初心者科学上网指南（二）">
-<meta name="twitter:description" content="VPS订购后步骤选择系统订购VPS时一般会让你选择系统。这里推荐ubuntu，因为centos的部分命令不同有些不不习惯。版本个人选择较新的版本(一般为18.04)。 配置防火墙(GCP，Azure等适用)购买VPS后这些商家可能需要手动更改防火墙规则以允许流量传输。  GCP:创建VM实例时勾选允许HTTP/HTTPS流量。然后，在左侧菜单中选择VPC网络，设置防火墙规则。添加规则，内容为0.0">
+
+<link rel="canonical" href="https://sbeam.dev/2019/03/11/post-1/">
 
 
-
-
-
-  
-  
-  <link rel="canonical" href="https://sbeam.dev/2019/03/11/post-1/">
-
-
-
-<script id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : false,
+    isPost : true
   };
 </script>
 
   <title>9102年的初心者科学上网指南（二） | Sbeam.dev</title>
   
-
-
-
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135436039-1"></script>
-  <script>
-    var host = window.location.hostname;
-    if (host !== "localhost" || !true) {
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-135436039-1');
-    }
-  </script>
-
-
-
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135436039-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-135436039-1');
+      }
+    </script>
 
 
 
@@ -153,7 +65,6 @@
 
   <noscript>
   <style>
-  .use-motion .motion-element,
   .use-motion .brand,
   .use-motion .menu-item,
   .sidebar-inner,
@@ -162,9 +73,8 @@
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
+  .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -178,285 +88,143 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
-    
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
 
-    <div class="custom-logo-site-title">
+  <div class="site-meta">
+
+    <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Sbeam.dev</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-    
-      
         <p class="site-subtitle">技术相关分享，以及杂谈</p>
-      
-    
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
-
 
 
 <nav class="site-nav">
   
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
+        <li class="menu-item menu-item-tags">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-categories">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
+        <li class="menu-item menu-item-archives">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
   </li>
+  </ul>
 
-      
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
 </nav>
-
-
-
-  
-
-
-
 </div>
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
-          <div id="content" class="content">
+
+          <div class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
-
-  
-
+  <div class="posts-expand">
+      
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://sbeam.dev/2019/03/11/post-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Hannah">
       <meta itemprop="description" content="随缘小站">
-      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Sbeam.dev">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">9102年的初心者科学上网指南（二）
-
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          9102年的初心者科学上网指南（二）
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">发表于</span>
 
               <time title="创建时间：2019-03-11 20:53:12" itemprop="dateCreated datePublished" datetime="2019-03-11T20:53:12+08:00">2019-03-11</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+            </span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
+                <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2019-03-14 10:24:12" itemprop="dateModified" datetime="2019-03-14T10:24:12+08:00">2019-03-14</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
+              </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-
-                
-                
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+                </span>
                   ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/网络/" itemprop="url" rel="index"><span itemprop="name">网络</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF/%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">网络</span></a>
+                </span>
             </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
 
           
 
         </div>
       </header>
-    
 
     
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-      
 
       
         <h2 id="VPS订购后步骤"><a href="#VPS订购后步骤" class="headerlink" title="VPS订购后步骤"></a>VPS订购后步骤</h2><h3 id="选择系统"><a href="#选择系统" class="headerlink" title="选择系统"></a>选择系统</h3><p>订购VPS时一般会让你选择系统。这里推荐ubuntu，因为centos的部分命令不同有些不不习惯。版本个人选择较新的版本(一般为18.04)。</p>
@@ -480,300 +248,172 @@
 <h3 id="跑分-可选"><a href="#跑分-可选" class="headerlink" title="跑分(可选)"></a>跑分(可选)</h3><p>个人使用<a href="https://github.com/FunctionClub/ZBench" target="_blank" rel="noopener">Zbench</a>，大佬制作，功能较为全面。使用方法：<br><code>wget -N --no-check-certificate https://raw.githubusercontent.com/FunctionClub/ZBench/master/ZBench-CN.sh &amp;&amp; bash ZBench-CN.sh</code><br>之后按照提示操作即可。可以用来测试VPS性能，以及<del>装逼</del>。</p>
 <h3 id="bbr的安装"><a href="#bbr的安装" class="headerlink" title="bbr的安装"></a>bbr的安装</h3><p>Bbr可以有效优化tcp传输，反映在科学上网的速度更快。<br><em>部分商家可能已经优化，不需要或者禁止安装bbr，请注意这一点。</em></p>
 <h4 id="一般安装-除openvz虚拟化之外"><a href="#一般安装-除openvz虚拟化之外" class="headerlink" title="一般安装(除openvz虚拟化之外)"></a>一般安装(除openvz虚拟化之外)</h4><p>这里采用秋水大佬的脚本。<br><a href="https://teddysun.com/489.html" target="_blank" rel="noopener">安装方法</a><br>看前面的“使用方法”部分即可。</p>
-<h4 id="OpenVZ安装"><a href="#OpenVZ安装" class="headerlink" title="OpenVZ安装"></a>OpenVZ安装</h4><p>采用南琴浪大佬的<a href="https://github.com/tcp-nanqinlang/lkl-rinetd" target="_blank" rel="noopener">脚本</a>。
-但是由于部分OpenVZ机器是由其他虚拟化机器(母鸡)开出来的虚拟机(小鸡)，所以直接安装会报错。以下介绍解决方法：<br><code>wget https://github.com/tcp-nanqinlang/lkl-rinetd/releases/download/1.1.0/tcp_nanqinlang-rinetd-debianorubuntu.sh</code><br>以上命令下载脚本。<br><code>nano tcp_nanqinlang-rinetd-debianorubuntu.sh</code><br>打开编辑器编辑脚本文件。<br>在25行<code>check_ovz</code>处四行每行前添加<code>#</code>(到<code>}</code>处为止)。<br>再到文件88行左右，在<code>check_ovz</code>行首添加<code>#</code>。
-按<code>Ctrl+X</code>选择保存并退出。<br>以上操作，把脚本中检查虚拟化技术的部分注释掉，避免报错。<em>前提是你清楚自己的VPS是OpenVZ虚拟化的。</em><br>然后执行<code>bash tcp_nanqinlang-rinetd-debianorubuntu.sh</code>，按照屏幕提示操作即可。</p>
+<h4 id="OpenVZ安装"><a href="#OpenVZ安装" class="headerlink" title="OpenVZ安装"></a>OpenVZ安装</h4><p>采用南琴浪大佬的<a href="https://github.com/tcp-nanqinlang/lkl-rinetd" target="_blank" rel="noopener">脚本</a>。<br>但是由于部分OpenVZ机器是由其他虚拟化机器(母鸡)开出来的虚拟机(小鸡)，所以直接安装会报错。以下介绍解决方法：<br><code>wget https://github.com/tcp-nanqinlang/lkl-rinetd/releases/download/1.1.0/tcp_nanqinlang-rinetd-debianorubuntu.sh</code><br>以上命令下载脚本。<br><code>nano tcp_nanqinlang-rinetd-debianorubuntu.sh</code><br>打开编辑器编辑脚本文件。<br>在25行<code>check_ovz</code>处四行每行前添加<code>#</code>(到<code>}</code>处为止)。<br>再到文件88行左右，在<code>check_ovz</code>行首添加<code>#</code>。<br>按<code>Ctrl+X</code>选择保存并退出。<br>以上操作，把脚本中检查虚拟化技术的部分注释掉，避免报错。<em>前提是你清楚自己的VPS是OpenVZ虚拟化的。</em><br>然后执行<code>bash tcp_nanqinlang-rinetd-debianorubuntu.sh</code>，按照屏幕提示操作即可。</p>
 <p>本教程这一部分到此结束。到此，你已经完成了安装V2ray之前的准备工作，下一篇将讲述v2ray的配置。</p>
 
-      
     </div>
 
     
-
-    
-    
-    
-
-    
-
-    
-      
     
     
 
-    
-
-    <footer class="post-footer">
-      
-        
-          
-        
-        <div class="post-tags">
-          
-            <a href="/tags/v2ray/" rel="tag"># v2ray</a>
-          
-            <a href="/tags/教程/" rel="tag"># 教程</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/03/11/post/" rel="next" title="9102年的初心者科学上网指南（一）">
-                <i class="fa fa-chevron-left"></i> 9102年的初心者科学上网指南（一）
-              </a>
-            
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/v2ray/" rel="tag"># v2ray</a>
+              <a href="/tags/%E6%95%99%E7%A8%8B/" rel="tag"># 教程</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/16/post/" rel="prev" title="9102年的初心者科学上网指南（三）">
-                9102年的初心者科学上网指南（三） <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
 
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/03/11/post/" rel="prev" title="9102年的初心者科学上网指南（一）">
+      <i class="fa fa-chevron-left"></i> 9102年的初心者科学上网指南（一）
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/03/16/post/" rel="next" title="9102年的初心者科学上网指南（三）">
+      9102年的初心者科学上网指南（三） <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
-
+  
+  
+  
 
   </div>
 
 
           </div>
           
-
-  
-    <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC80MzEyMS8xOTY2Nw=="></div>
-    </div>
-
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80MzEyMS8xOTY2Nw=="></div>
+  </div>
   
 
-
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
-        
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
-  <aside id="sidebar" class="sidebar">
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#VPS订购后步骤"><span class="nav-number">1.</span> <span class="nav-text">VPS订购后步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#选择系统"><span class="nav-number">1.1.</span> <span class="nav-text">选择系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置防火墙-GCP，Azure等适用"><span class="nav-number">1.2.</span> <span class="nav-text">配置防火墙(GCP，Azure等适用)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置NAT"><span class="nav-number">1.3.</span> <span class="nav-text">配置NAT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其它控制面板操作"><span class="nav-number">1.4.</span> <span class="nav-text">其它控制面板操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连接VPS"><span class="nav-number">1.5.</span> <span class="nav-text">连接VPS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置前准备"><span class="nav-number">2.</span> <span class="nav-text">配置前准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础操作"><span class="nav-number">2.1.</span> <span class="nav-text">基础操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#跑分-可选"><span class="nav-number">2.2.</span> <span class="nav-text">跑分(可选)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bbr的安装"><span class="nav-number">2.3.</span> <span class="nav-text">bbr的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一般安装-除openvz虚拟化之外"><span class="nav-number">2.3.1.</span> <span class="nav-text">一般安装(除openvz虚拟化之外)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OpenVZ安装"><span class="nav-number">2.3.2.</span> <span class="nav-text">OpenVZ安装</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">Hannah</p>
-              <div class="site-description motion-element" itemprop="description">随缘小站</div>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">10</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  
-                    
-                      <a href="/categories/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">8</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                      <a href="/tags/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">8</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-
-          
-
-          
-
-          
-          
-            <div class="links-of-blogroll motion-element links-of-blogroll-block">
-              <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-link"></i>
-                友情链接
-              </div>
-              <ul class="links-of-blogroll-list">
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://lastmc.github.io" title="http://lastmc.github.io" rel="noopener" target="_blank">Lastmc</a>
-                  </li>
-                
-              </ul>
-            </div>
-          
-
-          
-            
-          
-          
-
-        </div>
-      </div>
-
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#VPS订购后步骤"><span class="nav-number">1.</span> <span class="nav-text">VPS订购后步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#选择系统"><span class="nav-number">1.1.</span> <span class="nav-text">选择系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置防火墙-GCP，Azure等适用"><span class="nav-number">1.2.</span> <span class="nav-text">配置防火墙(GCP，Azure等适用)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置NAT"><span class="nav-number">1.3.</span> <span class="nav-text">配置NAT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其它控制面板操作"><span class="nav-number">1.4.</span> <span class="nav-text">其它控制面板操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连接VPS"><span class="nav-number">1.5.</span> <span class="nav-text">连接VPS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置前准备"><span class="nav-number">2.</span> <span class="nav-text">配置前准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础操作"><span class="nav-number">2.1.</span> <span class="nav-text">基础操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#跑分-可选"><span class="nav-number">2.2.</span> <span class="nav-text">跑分(可选)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bbr的安装"><span class="nav-number">2.3.</span> <span class="nav-text">bbr的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一般安装-除openvz虚拟化之外"><span class="nav-number">2.3.1.</span> <span class="nav-text">一般安装(除openvz虚拟化之外)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OpenVZ安装"><span class="nav-number">2.3.2.</span> <span class="nav-text">OpenVZ安装</span></a></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-  
-
-
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Hannah</p>
+  <div class="site-description" itemprop="description">随缘小站</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
         
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
       </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Hannah</span>
-
-  
-
-  
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
 </div>
 
 
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://lastmc.github.io/" title="http:&#x2F;&#x2F;lastmc.github.io" rel="noopener" target="_blank">Lastmc</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
 
 
+      </div>
+    </main>
 
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hannah</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
+  </div>
   <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.2</div>
-
-
-
+  <div class="theme-info">主题 – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.7.2
+  </div>
 
         
 
@@ -784,109 +424,54 @@
 
 
 
-        
       </div>
     </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-    
-
-    
   </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
 
   
 
 <script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script src="/lib/jquery/index.js?v=3.4.1"></script>
-
-  
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-
-  
-
-
-  <script src="/js/utils.js?v=7.1.2"></script>
-
-  <script src="/js/motion.js?v=7.1.2"></script>
-
-
-
-  
-  
-
-
-  <script src="/js/schemes/muse.js?v=7.1.2"></script>
-
-
-
-  
-  <script src="/js/scrollspy.js?v=7.1.2"></script>
-<script src="/js/post-details.js?v=7.1.2"></script>
-
-
-
-  
-
-
-  <script src="/js/next-boot.js?v=7.1.2"></script>
-
-
-  
-
-  
-
-  
-
-  
-
-
-  
-    <script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
   window.livereOptions = {
-    refer: '2019/03/11/post-1/'
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
@@ -896,60 +481,8 @@
     j.async = true;
     e.parentNode.insertBefore(j, e);
   })(document, 'script');
+});
 </script>
-
-  
-
-
-  
-
-
-
-
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
-
-
-  
-
-  
-
-  
-  <script>
-    (function(){
-      var bp = document.createElement('script');
-      var curProtocol = window.location.protocol.split(':')[0];
-      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(bp, s);
-    })();
-  </script>
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":220,"height":440},"mobile":{"show":true},"log":false});</script></body>
 </html>
