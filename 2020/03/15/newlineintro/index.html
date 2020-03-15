@@ -20,21 +20,22 @@
     var CONFIG = {"hostname":"sbeam.dev","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="VPS订购后步骤选择系统订购VPS时一般会让你选择系统。这里推荐ubuntu，因为centos的部分命令不同有些不不习惯。版本个人选择较新的版本(一般为18.04)。 配置防火墙(GCP，Azure等适用)购买VPS后这些商家可能需要手动更改防火墙规则以允许流量传输。  GCP:创建VM实例时勾选允许HTTP&#x2F;HTTPS流量。然后，在左侧菜单中选择VPC网络，设置防火墙规则。添加规则，内容为0.0">
+  <meta name="description" content="简介最近有心思再经营下博客，想来本站最开始是写爬梯子教程起家，现在过去正好差不多一年，环境变化飞快，是时候写一篇新的文章了。本文主要分享VPS选购方面的经验，让各位能够更加明智地走上科学上网的道路。19年教程覆盖的其它内容基本都还可行，需要注意的是推荐使用v2ray+ws+tls组合（网上搜索教程一大把，一般不建议用cdn），各类设备均推荐对应的clash客户端使用。重申：本文仅为个人经验分享，不">
 <meta property="og:type" content="article">
-<meta property="og:title" content="9102年的初心者科学上网指南（二）">
-<meta property="og:url" content="https://sbeam.dev/2019/03/11/post-1/index.html">
+<meta property="og:title" content="2020年，自用VPS选购经验">
+<meta property="og:url" content="https://sbeam.dev/2020/03/15/newlineintro/index.html">
 <meta property="og:site_name" content="Sbeam.dev">
-<meta property="og:description" content="VPS订购后步骤选择系统订购VPS时一般会让你选择系统。这里推荐ubuntu，因为centos的部分命令不同有些不不习惯。版本个人选择较新的版本(一般为18.04)。 配置防火墙(GCP，Azure等适用)购买VPS后这些商家可能需要手动更改防火墙规则以允许流量传输。  GCP:创建VM实例时勾选允许HTTP&#x2F;HTTPS流量。然后，在左侧菜单中选择VPC网络，设置防火墙规则。添加规则，内容为0.0">
+<meta property="og:description" content="简介最近有心思再经营下博客，想来本站最开始是写爬梯子教程起家，现在过去正好差不多一年，环境变化飞快，是时候写一篇新的文章了。本文主要分享VPS选购方面的经验，让各位能够更加明智地走上科学上网的道路。19年教程覆盖的其它内容基本都还可行，需要注意的是推荐使用v2ray+ws+tls组合（网上搜索教程一大把，一般不建议用cdn），各类设备均推荐对应的clash客户端使用。重申：本文仅为个人经验分享，不">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2019-03-11T12:53:12.000Z">
-<meta property="article:modified_time" content="2019-03-14T02:24:12.146Z">
+<meta property="article:published_time" content="2020-03-15T08:46:05.000Z">
+<meta property="article:modified_time" content="2020-03-15T09:29:18.468Z">
 <meta property="article:author" content="Hannah">
-<meta property="article:tag" content="v2ray">
 <meta property="article:tag" content="教程">
+<meta property="article:tag" content="VPS">
+<meta property="article:tag" content="科学上网">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://sbeam.dev/2019/03/11/post-1/">
+<link rel="canonical" href="https://sbeam.dev/2020/03/15/newlineintro/">
 
 
 <script id="page-configurations">
@@ -46,7 +47,7 @@
   };
 </script>
 
-  <title>9102年的初心者科学上网指南（二） | Sbeam.dev</title>
+  <title>2020年，自用VPS选购经验 | Sbeam.dev</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135436039-1"></script>
     <script>
@@ -170,7 +171,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://sbeam.dev/2019/03/11/post-1/">
+    <link itemprop="mainEntityOfPage" href="https://sbeam.dev/2020/03/15/newlineintro/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -183,7 +184,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          9102年的初心者科学上网指南（二）
+          2020年，自用VPS选购经验
         </h1>
 
         <div class="post-meta">
@@ -192,16 +193,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2019-03-11 20:53:12" itemprop="dateCreated datePublished" datetime="2019-03-11T20:53:12+08:00">2019-03-11</time>
+              <time title="创建时间：2020-03-15 16:46:05 / 修改时间：17:29:18" itemprop="dateCreated datePublished" datetime="2020-03-15T16:46:05+08:00">2020-03-15</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-03-14 10:24:12" itemprop="dateModified" datetime="2019-03-14T10:24:12+08:00">2019-03-14</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -227,29 +222,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="VPS订购后步骤"><a href="#VPS订购后步骤" class="headerlink" title="VPS订购后步骤"></a>VPS订购后步骤</h2><h3 id="选择系统"><a href="#选择系统" class="headerlink" title="选择系统"></a>选择系统</h3><p>订购VPS时一般会让你选择系统。这里推荐ubuntu，因为centos的部分命令不同有些不不习惯。版本个人选择较新的版本(一般为18.04)。</p>
-<h3 id="配置防火墙-GCP，Azure等适用"><a href="#配置防火墙-GCP，Azure等适用" class="headerlink" title="配置防火墙(GCP，Azure等适用)"></a>配置防火墙(GCP，Azure等适用)</h3><p>购买VPS后这些商家可能需要手动更改防火墙规则以允许流量传输。</p>
-<ul>
-<li>GCP:创建VM实例时勾选允许HTTP/HTTPS流量。然后，在左侧菜单中选择VPC网络，设置防火墙规则。添加规则，内容为0.0.0.0/0，优先级填写1，来允许所有流量。然后选择菜单中的IP地址，将其中IP地址的“临时”属性改为“静态”。这个就是你VPS的IP。</li>
-<li>Azure需要在”安全组”中进行类似设置。</li>
-</ul>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>最近有心思再经营下博客，想来本站最开始是写爬梯子教程起家，现在过去正好差不多一年，环境变化飞快，是时候写一篇新的文章了。本文主要分享VPS选购方面的经验，让各位能够更加明智地走上科学上网的道路。19年教程覆盖的其它内容基本都还可行，需要注意的是<strong>推荐使用<code>v2ray+ws+tls</code>组合</strong>（网上搜索教程一大把，一般<strong>不</strong>建议用<code>cdn</code>），各类设备均推荐对应的<code>clash</code>客户端使用。重申：本文仅为个人经验分享，不一定正确，请注意本文发布时间，内容可能过时，本站与任何VPS商家无利益相关，不会发aff链接。</p>
 <a id="more"></a>
 
-<h3 id="配置NAT"><a href="#配置NAT" class="headerlink" title="配置NAT"></a>配置NAT</h3><p>NAT类型的VPS需要配置端口映射。商家会提供控制面板的访问方式，在控制面板中会有NAT一项可以设置。一般可以看到你的公网IP，已经有一个默认创建的“内网22”映射到“公网XXX”。可以添加映射路径。记住你创建的映射。在配置v2ray时，<strong>服务端配置文件端口填写内网数值，客户端配置文件填写公网IP，端口填写公网数值以正确对接。</strong></p>
-<h3 id="其它控制面板操作"><a href="#其它控制面板操作" class="headerlink" title="其它控制面板操作"></a>其它控制面板操作</h3><p>在商家提供的网页控制面板，可以进行重装，重启，开关，监控系统状况等操作，比较有用。</p>
-<h3 id="连接VPS"><a href="#连接VPS" class="headerlink" title="连接VPS"></a>连接VPS</h3><p><em>GCP网页控制台“实例列表”点击SSH即可在网页端连接。</em><br>一般需要用SSH客户端进行连接。这里推荐<a href="https://mobaxterm.mobatek.net/" target="_blank" rel="noopener">MobaXterm</a>，因为个人在用，比较方便(wsl也可以用它开gui，具体另外写文章)，颜值也可以。下载安装后，点击上方一行选项中最左边的Session，选择最左边的SSH，输入VPS的公网IP，端口(一般为22，或者是NAT对应的公网端口)，用户名(一般为root)等信息，确认然后连接，输入密码(一般商家提供或者自行在VPS控制面板修改)，就可以连接VPS开始操作。</p>
-<h2 id="配置前准备"><a href="#配置前准备" class="headerlink" title="配置前准备"></a>配置前准备</h2><h3 id="基础操作"><a href="#基础操作" class="headerlink" title="基础操作"></a>基础操作</h3><ul>
-<li>如果登录用户不是Root，输入<code>sudo su</code>切换为root用户。</li>
-<li>执行<code>apt-get update</code>更新软件包目录。</li>
-<li>如果之后的安装过程提示有某个软件包没有安装，执行<code>apt install xxx</code>进行安装。</li>
-<li>常用命令，如<code>cd /xxx/xxx/</code>跳转到某个路径，<code>ls</code>显示当前目录下的文件，想查找某一命令用法搜索引擎即可。</li>
-<li>nano文本编辑器。比较简单，容易上手。<code>nano</code>即可打开。<code>nano filename</code>可以打开指定文件。</li>
-</ul>
-<h3 id="跑分-可选"><a href="#跑分-可选" class="headerlink" title="跑分(可选)"></a>跑分(可选)</h3><p>个人使用<a href="https://github.com/FunctionClub/ZBench" target="_blank" rel="noopener">Zbench</a>，大佬制作，功能较为全面。使用方法：<br><code>wget -N --no-check-certificate https://raw.githubusercontent.com/FunctionClub/ZBench/master/ZBench-CN.sh &amp;&amp; bash ZBench-CN.sh</code><br>之后按照提示操作即可。可以用来测试VPS性能，以及<del>装逼</del>。</p>
-<h3 id="bbr的安装"><a href="#bbr的安装" class="headerlink" title="bbr的安装"></a>bbr的安装</h3><p>Bbr可以有效优化tcp传输，反映在科学上网的速度更快。<br><em>部分商家可能已经优化，不需要或者禁止安装bbr，请注意这一点。</em></p>
-<h4 id="一般安装-除openvz虚拟化之外"><a href="#一般安装-除openvz虚拟化之外" class="headerlink" title="一般安装(除openvz虚拟化之外)"></a>一般安装(除openvz虚拟化之外)</h4><p>这里采用秋水大佬的脚本。<br><a href="https://teddysun.com/489.html" target="_blank" rel="noopener">安装方法</a><br>看前面的“使用方法”部分即可。</p>
-<h4 id="OpenVZ安装"><a href="#OpenVZ安装" class="headerlink" title="OpenVZ安装"></a>OpenVZ安装</h4><p>采用南琴浪大佬的<a href="https://github.com/tcp-nanqinlang/lkl-rinetd" target="_blank" rel="noopener">脚本</a>。<br>但是由于部分OpenVZ机器是由其他虚拟化机器(母鸡)开出来的虚拟机(小鸡)，所以直接安装会报错。以下介绍解决方法：<br><code>wget https://github.com/tcp-nanqinlang/lkl-rinetd/releases/download/1.1.0/tcp_nanqinlang-rinetd-debianorubuntu.sh</code><br>以上命令下载脚本。<br><code>nano tcp_nanqinlang-rinetd-debianorubuntu.sh</code><br>打开编辑器编辑脚本文件。<br>在25行<code>check_ovz</code>处四行每行前添加<code>#</code>(到<code>}</code>处为止)。<br>再到文件88行左右，在<code>check_ovz</code>行首添加<code>#</code>。<br>按<code>Ctrl+X</code>选择保存并退出。<br>以上操作，把脚本中检查虚拟化技术的部分注释掉，避免报错。<em>前提是你清楚自己的VPS是OpenVZ虚拟化的。</em><br>然后执行<code>bash tcp_nanqinlang-rinetd-debianorubuntu.sh</code>，按照屏幕提示操作即可。</p>
-<p>本教程这一部分到此结束。到此，你已经完成了安装V2ray之前的准备工作，下一篇将讲述v2ray的配置。</p>
+<h2 id="购买前三思：用途与预算"><a href="#购买前三思：用途与预算" class="headerlink" title="购买前三思：用途与预算"></a>购买前三思：用途与预算</h2><p>理性消费，购买之前首先要考虑这两点。</p>
+<p>一般自用科学上网无非几种用途：轻度应用（看看推特），视频流媒体（Youtube，Netflix），重度墙外服务依赖（用谷歌网盘保存并同步文件），以及地区性服务（Niconico，公主连接）。不同用途选购策略不同，所需预算也不同。轻度使用大约20元/月左右或以下即可，其它需求则需要较高费用。</p>
+<p>用途与预算都易随时间变化，因此除非价格优惠或声誉很高，建议优先购买月付VPS。</p>
+<h2 id="用的啥运营商？"><a href="#用的啥运营商？" class="headerlink" title="用的啥运营商？"></a>用的啥运营商？</h2><p>自用电信，则优先选择CN2 GIA线路的机器，自用联通，则香港，日本均有较好选择，如果是移动那么自求多福，不太能救（可以尝试购买国内中转服务器或使用香港leaseweb等对移动较友善的机器，但由于移动的透传，极端情况国内连接都会质量极差）。至于教育网，质量不太会差到移动的地步，但也不太好，建议事先用测试ip或Looking glass进行测试。</p>
+<h2 id="ping的延迟作为参考不一定准"><a href="#ping的延迟作为参考不一定准" class="headerlink" title="ping的延迟作为参考不一定准"></a>ping的延迟作为参考不一定准</h2><p>ping用的ICMP协议，与实际科学上网走的TCP协议不同，而且实际连接受双程路由影响。故即使Ping延迟美丽，仍可能连接缓慢，甚至有灵车商家ping的路由与TCP路由不一样。因此可用mtr工具查看TCP路由及丢包，较为准确。当然，最准确的还是购买后直接测速。</p>
+<h2 id="国内中转买不买"><a href="#国内中转买不买" class="headerlink" title="国内中转买不买"></a>国内中转买不买</h2><p>如果有客观需求，国内中转是不错的选择。例如移动用户，或者其它运营商用户购买联通中转访问日本或香港的服务器，或者其它运营商用户购买电信中转访问CN2线路的服务器，都是实际需求。</p>
+<p>但是购买需要非常谨慎。其一，国内机器多数需要实名，做爬梯用途存在风险，且商家有客观可能泄露或滥用个人信息。其二，国内VPS市场现在正在快速发展，新商家不断涌现，也有商家倒闭或者跑路，声誉和稳定性都需要仔细甄别。其三，国内机器由于各种原因容易断线，被清退，遭到网络攻击，对使用造成影响。另外，<strong>镇江三线是大坑，千万不要买。</strong></p>
+<h2 id="流媒体解锁"><a href="#流媒体解锁" class="headerlink" title="流媒体解锁"></a>流媒体解锁</h2><p>带有流媒体解锁功能的机器一般价值不菲。美国，香港方向有较多提供解锁的机器。日本区由于控制严格，以及Abema.tv封锁严密，很难买到能完美解锁的机器。即使购买到相关机器，如商家无保证，仍有可能后期被封。购买DNS解锁服务是一种较好选择。</p>
+<h2 id="各类线路简评"><a href="#各类线路简评" class="headerlink" title="各类线路简评"></a>各类线路简评</h2><h3 id="美国方向"><a href="#美国方向" class="headerlink" title="美国方向"></a>美国方向</h3><p>便宜机器科学上网用一律不要买。CN2 GT线路现在非常拥挤，不要买。基本上只能买CN2 GIA线路的VPS，注意要可靠商家，电信最近清理了一批利用GT线路漏洞跑GIA的商家。联通也可买HE线路。</p>
+<h3 id="日本方向"><a href="#日本方向" class="headerlink" title="日本方向"></a>日本方向</h3><p>联通或者移动使用IIJ或BBTEC线路都不错，也有出售日本CN2的，就是太贵。</p>
+<h3 id="港台方向"><a href="#港台方向" class="headerlink" title="港台方向"></a>港台方向</h3><p>联通连HKT效果不错，但是适合自用的多为NAT机器，且由于机场多，容易被墙。</p>
+<p>Hinet也是机场大户，容易被墙。</p>
+<h3 id="欧洲方向"><a href="#欧洲方向" class="headerlink" title="欧洲方向"></a>欧洲方向</h3><p>俄国和德国的CN2机器都非常推荐，ZeptoVM的圣彼得堡大家都说香。</p>
 
     </div>
 
@@ -259,8 +247,9 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/v2ray/" rel="tag"># v2ray</a>
               <a href="/tags/%E6%95%99%E7%A8%8B/" rel="tag"># 教程</a>
+              <a href="/tags/VPS/" rel="tag"># VPS</a>
+              <a href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" rel="tag"># 科学上网</a>
           </div>
 
         
@@ -269,13 +258,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019/03/11/post/" rel="prev" title="9102年的初心者科学上网指南（一）">
-      <i class="fa fa-chevron-left"></i> 9102年的初心者科学上网指南（一）
+    <a href="/2019/08/06/mathpix/" rel="prev" title="Mathpix-跨平台OCR识别LaTeX工具(20/03更新)">
+      <i class="fa fa-chevron-left"></i> Mathpix-跨平台OCR识别LaTeX工具(20/03更新)
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2019/03/16/post/" rel="next" title="9102年的初心者科学上网指南（三）">
-      9102年的初心者科学上网指南（三） <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -340,7 +326,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#VPS订购后步骤"><span class="nav-number">1.</span> <span class="nav-text">VPS订购后步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#选择系统"><span class="nav-number">1.1.</span> <span class="nav-text">选择系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置防火墙-GCP，Azure等适用"><span class="nav-number">1.2.</span> <span class="nav-text">配置防火墙(GCP，Azure等适用)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置NAT"><span class="nav-number">1.3.</span> <span class="nav-text">配置NAT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其它控制面板操作"><span class="nav-number">1.4.</span> <span class="nav-text">其它控制面板操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连接VPS"><span class="nav-number">1.5.</span> <span class="nav-text">连接VPS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置前准备"><span class="nav-number">2.</span> <span class="nav-text">配置前准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础操作"><span class="nav-number">2.1.</span> <span class="nav-text">基础操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#跑分-可选"><span class="nav-number">2.2.</span> <span class="nav-text">跑分(可选)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bbr的安装"><span class="nav-number">2.3.</span> <span class="nav-text">bbr的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一般安装-除openvz虚拟化之外"><span class="nav-number">2.3.1.</span> <span class="nav-text">一般安装(除openvz虚拟化之外)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OpenVZ安装"><span class="nav-number">2.3.2.</span> <span class="nav-text">OpenVZ安装</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#购买前三思：用途与预算"><span class="nav-number">2.</span> <span class="nav-text">购买前三思：用途与预算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用的啥运营商？"><span class="nav-number">3.</span> <span class="nav-text">用的啥运营商？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ping的延迟作为参考不一定准"><span class="nav-number">4.</span> <span class="nav-text">ping的延迟作为参考不一定准</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#国内中转买不买"><span class="nav-number">5.</span> <span class="nav-text">国内中转买不买</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流媒体解锁"><span class="nav-number">6.</span> <span class="nav-text">流媒体解锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#各类线路简评"><span class="nav-number">7.</span> <span class="nav-text">各类线路简评</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#美国方向"><span class="nav-number">7.1.</span> <span class="nav-text">美国方向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#日本方向"><span class="nav-number">7.2.</span> <span class="nav-text">日本方向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#港台方向"><span class="nav-number">7.3.</span> <span class="nav-text">港台方向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#欧洲方向"><span class="nav-number">7.4.</span> <span class="nav-text">欧洲方向</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
