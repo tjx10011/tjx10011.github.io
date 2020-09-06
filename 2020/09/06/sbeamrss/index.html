@@ -24,24 +24,23 @@
     var CONFIG = {"hostname":"sbeam.dev","root":"/","scheme":"Mist","version":"8.0.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
 
-  <meta name="description" content="背景Cloudflare近日将原本的reCaptcha验证更换成了hCaptcha，该验证服务是让访问者标记图片中的内容，操作繁琐，体验极差，而国内用户在使用梯子上网时经常触发验证程序。Sukka大佬近日发了一篇文章，是关于利用无障碍Cookie来绕过这一验证的。这里提出另一种绕过验证的方法，使用浏览器插件Privacy Pass，不需要注册任何账户，也没有Cookies12小时的有效期限制，但也">
+  <meta name="description" content="简介当今，我们接收信息越发依赖于社交媒体与新闻应用程序，推荐算法几乎决定了我们每天的信息输入。而RSS作为一种传统的聚合信息形式，可以为我们提供更大的信息自主。苦于市面上的Android RSS阅读器都不能满足需要，或是需要收费，或是兼容性差，或是UI不够舒服，我开发了SbeamRSS以满足自己的阅读需求。该应用基于flutter框架开发，在Github免费开源，目前已在谷歌商店上架。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用浏览器插件绕过Cloudflare等hCaptcha验证">
-<meta property="og:url" content="https://sbeam.dev/2020/04/10/post/index.html">
+<meta property="og:title" content="SbeamRSS介绍-基于flutter的RSS阅读器">
+<meta property="og:url" content="https://sbeam.dev/2020/09/06/sbeamrss/index.html">
 <meta property="og:site_name" content="Sbeam.dev">
-<meta property="og:description" content="背景Cloudflare近日将原本的reCaptcha验证更换成了hCaptcha，该验证服务是让访问者标记图片中的内容，操作繁琐，体验极差，而国内用户在使用梯子上网时经常触发验证程序。Sukka大佬近日发了一篇文章，是关于利用无障碍Cookie来绕过这一验证的。这里提出另一种绕过验证的方法，使用浏览器插件Privacy Pass，不需要注册任何账户，也没有Cookies12小时的有效期限制，但也">
+<meta property="og:description" content="简介当今，我们接收信息越发依赖于社交媒体与新闻应用程序，推荐算法几乎决定了我们每天的信息输入。而RSS作为一种传统的聚合信息形式，可以为我们提供更大的信息自主。苦于市面上的Android RSS阅读器都不能满足需要，或是需要收费，或是兼容性差，或是UI不够舒服，我开发了SbeamRSS以满足自己的阅读需求。该应用基于flutter框架开发，在Github免费开源，目前已在谷歌商店上架。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://i.loli.net/2020/04/10/FrQ56T92ZNwdfqz.png">
-<meta property="og:image" content="https://i.loli.net/2020/04/10/qu9jxKketAM2hRb.png">
-<meta property="article:published_time" content="2020-04-10T09:45:42.000Z">
-<meta property="article:modified_time" content="2020-04-10T10:43:37.000Z">
+<meta property="og:image" content="https://i.loli.net/2020/09/06/hwz2QM6mFSvgVKo.png">
+<meta property="article:published_time" content="2020-09-06T03:17:11.000Z">
+<meta property="article:modified_time" content="2020-09-06T03:51:52.247Z">
 <meta property="article:author" content="Hannah">
-<meta property="article:tag" content="教程">
+<meta property="article:tag" content="折腾">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2020/04/10/FrQ56T92ZNwdfqz.png">
+<meta name="twitter:image" content="https://i.loli.net/2020/09/06/hwz2QM6mFSvgVKo.png">
 
 
-<link rel="canonical" href="https://sbeam.dev/2020/04/10/post/">
+<link rel="canonical" href="https://sbeam.dev/2020/09/06/sbeamrss/">
 
 
 <script class="page-configurations">
@@ -54,7 +53,7 @@
   };
 </script>
 
-  <title>用浏览器插件绕过Cloudflare等hCaptcha验证 | Sbeam.dev</title>
+  <title>SbeamRSS介绍-基于flutter的RSS阅读器 | Sbeam.dev</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135436039-1"></script>
     <script>
@@ -191,7 +190,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">操作方法</span></a></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD"><span class="nav-number">2.</span> <span class="nav-text">主要功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">开发过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%AE%E5%89%8D%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98"><span class="nav-number">3.1.</span> <span class="nav-text">目前的一些问题</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -264,7 +263,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://sbeam.dev/2020/04/10/post/">
+    <link itemprop="mainEntityOfPage" href="https://sbeam.dev/2020/09/06/sbeamrss/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -280,7 +279,7 @@
     
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          用浏览器插件绕过Cloudflare等hCaptcha验证
+          SbeamRSS介绍-基于flutter的RSS阅读器
         </h1>
 
         <div class="post-meta-container">
@@ -292,7 +291,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2020-04-10 17:45:42 / 修改时间：18:43:37" itemprop="dateCreated datePublished" datetime="2020-04-10T17:45:42+08:00">2020-04-10</time>
+      <time title="创建时间：2020-09-06 11:17:11 / 修改时间：11:51:52" itemprop="dateCreated datePublished" datetime="2020-09-06T11:17:11+08:00">2020-09-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -304,7 +303,7 @@
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%8A%80%E6%9C%AF/%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">网络</span></a>
+          <a href="/categories/%E6%8A%80%E6%9C%AF/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
         </span>
     </span>
 
@@ -318,17 +317,30 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>Cloudflare近日将原本的reCaptcha验证更换成了hCaptcha，该验证服务是让访问者标记图片中的内容，操作繁琐，体验极差，而国内用户在使用梯子上网时经常触发验证程序。Sukka大佬近日发了一篇<a target="_blank" rel="noopener" href="https://blog.skk.moe/post/bypass-hcaptcha/">文章</a>，是关于利用无障碍Cookie来绕过这一验证的。这里提出另一种绕过验证的方法，使用浏览器插件Privacy Pass，不需要注册任何账户，也没有Cookies12小时的有效期限制，但也有缺陷，供各位自行选择。</p>
-<img src="https://i.loli.net/2020/04/10/FrQ56T92ZNwdfqz.png" height="30%" width="30%" />
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>当今，我们接收信息越发依赖于社交媒体与新闻应用程序，推荐算法几乎决定了我们每天的信息输入。而RSS作为一种传统的聚合信息形式，可以为我们提供更大的信息自主。苦于市面上的Android RSS阅读器都不能满足需要，或是需要收费，或是兼容性差，或是UI不够舒服，我开发了SbeamRSS以满足自己的阅读需求。该应用基于flutter框架开发，在<a target="_blank" rel="noopener" href="https://github.com/sbeam-dev/SbeamRSS">Github</a>免费开源，目前已在谷歌商店上架。</p>
+<img src="https://i.loli.net/2020/09/06/hwz2QM6mFSvgVKo.png" alt="topbig.png" style="zoom: 67%;" />
 
 <a id="more"></a>
 
-<h2 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a>操作方法</h2><p>在<a target="_blank" rel="noopener" href="https://privacypass.github.io/">官方网站</a>提供的链接下载安装对应的浏览器插件（有Firefox和Chrome版本）。</p>
-<img src="https://i.loli.net/2020/04/10/qu9jxKketAM2hRb.png" height="20%" width="20%" />
+<h2 id="主要功能"><a href="#主要功能" class="headerlink" title="主要功能"></a>主要功能</h2><ul>
+<li>添加并编辑RSS源(支持RSS和Atom格式，推荐使用包含文章全文的源，例如RSShub)</li>
+<li>获取文章并进行阅读，阅读界面可自定义字体和字号。</li>
+<li>收藏文章以方便之后阅读</li>
+<li>分享文章，在浏览器打开</li>
+<li>支持系统深色模式</li>
+</ul>
+<p>用家可以访问上面的Github页面了解进度和阅读文档(英文)。欢迎提issue和PR。</p>
+<h2 id="开发过程"><a href="#开发过程" class="headerlink" title="开发过程"></a>开发过程</h2><p>本人初学flutter，本应用是第一个项目，因此断断续续半年多才做成目前的样子。得益于flutter框架，极大节省了开发的时间耗费。</p>
+<p>项目主体结构如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">├── components</span><br><span class="line">│   └── htmlparse.dart</span><br><span class="line">├── databases</span><br><span class="line">│   ├── favdb.dart</span><br><span class="line">│   ├── feeddb.dart</span><br><span class="line">│   └── sourcedb.dart</span><br><span class="line">├── interfaces</span><br><span class="line">│   ├── favorite.dart</span><br><span class="line">│   ├── feeds.dart</span><br><span class="line">│   ├── home.dart</span><br><span class="line">│   ├── reader.dart</span><br><span class="line">│   ├── settings.dart</span><br><span class="line">│   └── subs.dart</span><br><span class="line">├── main.dart</span><br><span class="line">└── models</span><br><span class="line">    ├── favmodel.dart</span><br><span class="line">    ├── feedmodel.dart</span><br><span class="line">    ├── readermodel.dart</span><br><span class="line">    ├── sourcemodel.dart</span><br><span class="line">    └── thememodel.dart</span><br></pre></td></tr></table></figure>
 
-<p>在插件的窗口可以看到目前Pass（通行证）的数目。一个Pass可以让你直接通过一次hCaptcha验证。如果没有Pass数了，可以点击Get More Passes，完成一次hCaptcha，获得30个左右的Pass。在有充足的Pass个数的情况下，遇到验证就可以自动直接跳转，不需要任何操作，消耗的Pass个数会反映在浏览器插件图标上。</p>
-<p>由上面的叙述可知，该插件并不是真正“绕过”了hCaptcha验证，仍需要人工完成验证获取Pass。但这一“兑换”方式使1次验证操作具有约30次的效力，实际上大大减少了平时上网花费在过验证上的时间精力。</p>
-<p>各位可以视情况选用Cookies绕过方法和本文中插件。Sukka在上面链接中对hCaptcha和Cloudflare的验证过程进行了深入的原理分析，值得一看。</p>
+<p><code>database</code>目录内为数据库储存部分。主要利用<code>sqflite</code>包，以sql形式存储RSS源以及获取的文章。一些应用设置用<code>shared_preferences</code>包储存。</p>
+<p><code>models</code>部分是用于前后端交互的内容。利用<code>provider</code>包进行状态管理，实现刷新文章、编辑源等操作。</p>
+<p><code>interfaces</code>部分是前端界面。采用flutter推荐使用的material控件，符合material设计规则。用<code>incrementally_loading_listview</code>实现下拉刷新效果。</p>
+<h3 id="目前的一些问题"><a href="#目前的一些问题" class="headerlink" title="目前的一些问题"></a>目前的一些问题</h3><ul>
+<li>阅读界面不能选择复制文字。见<a target="_blank" rel="noopener" href="https://github.com/Sub6Resources/flutter_html/issues/169">issue</a></li>
+<li>阅读界面显示的进度条若根据滑动实时更新会产生严重卡顿，目前只能在滑动完成后进行更新。</li>
+</ul>
 
     </div>
 
@@ -338,21 +350,18 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E6%95%99%E7%A8%8B/" rel="tag"># 教程</a>
+              <a href="/tags/%E6%8A%98%E8%85%BE/" rel="tag"># 折腾</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2020/03/15/newlineintro/" rel="prev" title="2020年，自用VPS选购经验">
-                  <i class="fa fa-chevron-left"></i> 2020年，自用VPS选购经验
+                <a href="/2020/04/10/post/" rel="prev" title="用浏览器插件绕过Cloudflare等hCaptcha验证">
+                  <i class="fa fa-chevron-left"></i> 用浏览器插件绕过Cloudflare等hCaptcha验证
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2020/09/06/sbeamrss/" rel="next" title="SbeamRSS介绍-基于flutter的RSS阅读器">
-                  SbeamRSS介绍-基于flutter的RSS阅读器 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -454,7 +463,7 @@
 <script>
 NexT.utils.loadComments('#lv-container', () => {
   window.livereOptions = {
-    refer: "2020/04/10/post/"
+    refer: "2020/09/06/sbeamrss/"
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
