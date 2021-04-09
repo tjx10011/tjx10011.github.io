@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.3.0">
+<meta name="generator" content="Hexo 5.4.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/sitefavicon2.png">
@@ -16,11 +16,11 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css">
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"sbeam.dev","root":"/","images":"/images","scheme":"Mist","version":"8.2.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+    var CONFIG = {"hostname":"sbeam.dev","root":"/","images":"/images","scheme":"Mist","version":"8.3.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
 <meta name="description" content="写在前面本文主要总结了博主近段时间有关安卓解锁、刷机、个性化使用的经验。使用的设备是小米8（6+128），文中会涉及对一些第三方ROM的简单评价，Magisk模块介绍，以及问题解决方案。希望能够让更多人通过更容易的方式享受玩机的乐趣。本文按照一般操作步骤顺序展开。">
 <meta property="og:type" content="article">
@@ -237,7 +237,7 @@
     </header>
 
     
-  <div class="back-to-top" role="button">
+  <div class="back-to-top" role="button" aria-label="返回顶部">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
@@ -316,7 +316,7 @@
     
     <div class="post-body" itemprop="articleBody">
         <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>本文主要总结了博主近段时间有关安卓解锁、刷机、个性化使用的经验。使用的设备是小米8（6+128），文中会涉及对一些第三方ROM的简单评价，Magisk模块介绍，以及问题解决方案。希望能够让更多人通过更容易的方式享受玩机的乐趣。本文按照一般操作步骤顺序展开。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="有关解锁Bootloader"><a href="#有关解锁Bootloader" class="headerlink" title="有关解锁Bootloader"></a>有关解锁Bootloader</h2><p>如果要刷第三方ROM或者root（使用Magisk或者Xposed）的需求，就必须要先解锁Bootloader。手机能否解锁依据厂商而定。目前大致的信息如下：</p>
 <ol>
